@@ -1,0 +1,10 @@
+My first attempt making a jQuery plugin, following
+the guidelines at: http://docs.jquery.com/Plugins/Authoring
+
+Boids code adapted from Javascript Boids by Ben Dowling,
+see: http://www.coderholic.com/javascript-boids/
+
+If this is bound to the window resize event, then the 
+jQuery resize event plugin by "Cowboy" Ben Alman
+should be used as it throttles the window resize events.
+See: http://benalman.com/projects/jquery-resize-plugin/
