@@ -199,33 +199,17 @@
 		boids.push(new Boid(Math.ceil(Math.random() * c.width), Math.ceil(Math.random() * c.width)));
 	    }
 
-	    //for(var i = 0; i < settings["boids"]; i++) {
-	    //	console.log(boids[i].x + " " + boids[i].y);
-	    //}
-
 	    var rate = Math.ceil(1000/settings["refreshrate"]);
 	    var timer = setInterval(function(){
-
 		for(var i = 0; i < settings["boids"]; i++) {
 		    boids[i].moveWith(boids, 300);
 		    boids[i].moveCloser(boids, 300);					
 		    boids[i].moveAway(boids, 15);	
 		}
 		
-		
 		for(var i = 0; i < settings["boids"]; i++) {
 		    boids[i].move();
 		}
-
-		//ctx.lineWidth = 1;
-		//ctx.strokeStyle = "rgba(0,0,0,0)";
-		//for(var i = 0; i < settings["boids"]; i++) {
-		//    ctx.beginPath();
-		//    ctx.moveTo(Math.floor(boids[i].ppx), Math.floor(boids[i].ppy));
-		//    ctx.lineTo(Math.floor(boids[i].px), Math.floor(boids[i].py));
-		//    ctx.closePath();
-		//    ctx.stroke();
-		//}
 
 		ctx.clearRect(0, 0, c.width, c.height);
 		ctx.lineWidth = 1;
@@ -237,25 +221,7 @@
 		    ctx.lineTo(Math.floor(boids[i].x), Math.floor(boids[i].y));
 		    ctx.closePath();
 		    ctx.stroke();
-		}
-
-		//var img = ctx.getImageData(0, 0, c.width, c.height);
-		//for(var i = 0; i < settings["boids"]; i++) {
-		//    var index = (Math.floor(boids[i].px) + Math.floor(boids[i].py) * img.width) * 4;
-		//    img.data[index] = 0;
-		//    img.data[index+1] = 0;
-		//    img.data[index+2] = 0;
-		//    img.data[index+3] = 0;
-		//}
-		//for(var i = 0; i < settings["boids"]; i++) {
-		//    var index = (Math.floor(boids[i].x) + Math.floor(boids[i].y) * img.width) * 4;
-		//    img.data[index] = settings["red"];
-		//    img.data[index+1] = settings["green"];
-		//    img.data[index+2] = settings["blue"];
-		//    img.data[index+3] = settings["alpha"];
-		//}
-		//ctx.putImageData(img, 0, 0);
-		
+		}		
 	    }, rate);
 	    console.log("setInterval(" + rate + ") = " + timer);
 	    $(this).data("jquery.boids.timer", timer);
