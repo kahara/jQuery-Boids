@@ -1,0 +1,26 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+<meta charset="utf-8"/>
+<title>jquery.boids.js</title> 
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script src="jquery.resize.js"></script>
+<script src="jquery.boids.js"></script>
+<script>
+$(document).ready(function(){
+
+$("#test").boids();
+$(window).bind("resize", function() { $("#test").boids(); });
+
+});
+</script>
+
+</head> 
+
+<body>
+
+<div id="test" style="position: relative; margin: 0px; width: 1000px; height: 1000px; background-color: white;"></div>
+
+</body>
+</html>
