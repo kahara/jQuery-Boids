@@ -159,10 +159,11 @@
 	    if($(this).data("jquery.boids.timer")) {
 		console.log("clearInterval(" + $(this).data("jquery.boids.timer") + ")");		
 		clearInterval($(this).data("jquery.boids.timer"));
-		$($(this).data("jquery.boids.timer")).remove();
+		$(this).data("jquery.boids.timer", null);
 	    }
 	    if($(this).data("jquery.boids.canvas")) {		
 		$($(this).data("jquery.boids.canvas")).remove();
+		$(this).data("jquery.boids.canvas", null);
 	    }
 	    
 	    var c = document.createElement("canvas");
@@ -178,7 +179,7 @@
 
 	    // store a reference to canvas element in parent
 	    $(this).data("jquery.boids.canvas", c);	    
-	    $(this).prepend(c);
+	    $(this).append(c);
 
 	    $(c).css("position", "absolute");
 	    $(c).css("top", 0);
