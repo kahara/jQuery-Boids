@@ -197,7 +197,7 @@
 
 	    var boids = [];
 	    for(var i = 0; i < settings["boids"]; i++) {
-		boids.push(new Boid(Math.ceil(Math.random() * c.width), Math.ceil(Math.random() * c.width)));
+		boids.push(new Boid(Math.ceil(Math.random() * c.width), Math.ceil(Math.random() * c.height)));
 	    }
 
 	    var rate = Math.ceil(1000/settings["refreshrate"]);
