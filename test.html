@@ -4,23 +4,19 @@
 <meta charset="utf-8"/>
 <title>jquery.boids.js</title> 
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-<script src="jquery.resize.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="jquery.boids.js"></script>
 <script>
 $(document).ready(function(){
-
-$("#test").boids();
-$(window).bind("resize", function() { $("#test").boids(); });
-
+  $("#test").boids();
 });
 </script>
 
 </head> 
 
-<body style="background-color: black;">
+<body style="background-color: black; margin: 0;">
 
-<div id="test" style="position: relative; margin: auto; width: 800px; height: 250px; background-color: white;"></div>
+<div id="test" style="position: absolute; width: 100%; height: 100%; background-color: white;"></div>
 
 </body>
 </html>
